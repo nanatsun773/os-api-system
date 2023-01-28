@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org" lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>NHKで放送中の番組</title>
+    <meta name="description" content="NHK番組表APIを使って、現在放送中の番組を表示しています。">
+</head>
+<body>
+<h1 class="text-center">NHK総合1で放送中の番組</h1>
+<div>
+    <div class="columns medium-4">
+        <div class="card">
+            <div class="card-divider">
+                <span class="status">前の番組</span>
+            </div>
+            <div class="card-section">
+                <p><span class="title" wicket:id="previousTitle">title</span></p>
+                <p><span wicket:id="previousSubtitle">subtitle</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="columns medium-4">
+        <div class="card">
+            <div class="card-divider">
+                <p><span class="status">現在放送中の番組</span></p>
+            </div>
+            <div class="card-section">
+                <p><span class="title" wicket:id="presentTitle">title</span></p>
+                <p><span wicket:id="presentSubtitle">subtitle</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="columns medium-4">
+        <div class="card">
+            <div class="card-divider">
+                <span class="status">次の番組</span>
+            </div>
+            <div class="card-section">
+                <p><span class="title" wicket:id="followingTitle">title</span></p>
+                <p><span wicket:id="followingSubtitle">subtitle</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div><a wicket:id="signout">ログアウト</a></div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+version: '3'
+services:
+  app:
+    image: openjdk:17-jdk-alpine
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: ./mvnw spring-boot:run
+  db:
+    image: postgres:15.1
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./docker/db/sql:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
